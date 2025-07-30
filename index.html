@@ -9,8 +9,10 @@
 
   <script>
     function closeAndGoBack() {
-      // Simply navigate to page 2
-      window.location.href = "https://test2-jet-one.vercel.app/";
+      // First clear the current history entry to prevent forward navigation
+      history.replaceState(null, '', window.location.href);
+      // Then go back to previous page
+      history.back();
     }
   </script>
 </body>
