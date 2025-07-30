@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 3</title>
+</head>
+<body>
+  <h1>Page 3</h1>
+  <button onclick="closeAndGoBack()">Close and Go Back to Page 2</button>
+
+  <script>
+    function closeAndGoBack() {
+      history.back();
+    }
+
+    // Remove this page from history after back
+    window.addEventListener('pageshow', function () {
+      history.replaceState(null, '', location.href);
+    });
+  </script>
+</body>
+</html>
