@@ -9,9 +9,9 @@
 
   <script>
     function closeAndGoBack() {
-      // First clear the current history entry to prevent forward navigation
-      history.replaceState(null, '', window.location.href);
-      // Then go back to previous page
+      // Set flag that we're coming from Page 3
+      sessionStorage.setItem('fromPage3', 'true');
+      // Go back to previous page
       history.back();
     }
   </script>
