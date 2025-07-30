@@ -9,13 +9,11 @@
 
   <script>
     function closeAndGoBack() {
-      history.back();
+      // First clear the history by replacing the current entry
+      history.replaceState(null, '', window.location.href);
+      // Then navigate to page 2
+      window.location.replace("https://test2-jet-one.vercel.app/");
     }
-
-    // Remove this page from history after back
-    window.addEventListener('pageshow', function () {
-      history.replaceState(null, '', location.href);
-    });
   </script>
 </body>
 </html>
